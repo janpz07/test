@@ -8,8 +8,8 @@ describe('myApp.screen2 module', function() {
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view2Ctrl = $controller('screen2');
-      expect(view2Ctrl).toBeDefined();
+      var screen2 = $controller('screen2');
+      expect(screen2).toBeDefined();
     }));
 
   });
