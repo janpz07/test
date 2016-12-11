@@ -1,15 +1,24 @@
-'use strict';
+var myapp = angular.module('myapp', ['ngResource','ngRoute']);
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.screen1',
-  'myApp.screen2',
-  'myApp.screen3',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/screen1'});
-}]);
+// Configuración de rutas
+myapp.config(function ($routeProvider) {
+    $routeProvider .when('/', {
+            templateUrl: 'screen1.html',
+            controller: 'contronller1'})
+        .when('/screen2', {
+            templateUrl: 'screen2.html',
+            controller: 'contronller2'})
+        .when('/screen3', {
+            templateUrl: 'screen3.html',
+            controller: 'contronller3'});
+});
+myapp.controller('contronller1', function($scope) {
+    $scope.message = 'Hola, Mundo!';
+    console.log($scope.message);
+});
+myapp.controller('contronller2', function($scope) {
+    $scope.message = 'Hola, Mundo!';
+});
+myapp.controller('contronller3', function($scope) {
+    $scope.message = 'Hola, Mundo!';
+});
