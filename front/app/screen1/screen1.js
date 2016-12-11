@@ -1,14 +1,23 @@
-'use strict';
-
-angular.module('myApp.screen1', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/screen1', {
-    templateUrl: 'screen1/screen1.html',
-    controller: 'screen1'
+(function () {
+  'use strict';
+  /* controller pantalla1 */
+  mainModule.config(function ($stateProvider) {
+    $stateProvider
+    .state('screen1.screen1', {
+      url: '/screen1',
+      views: {
+        reportes: {
+          templateUrl: 'screen1/screen1.html',
+          controller: controller
+        }
+      },
+      resolve: {}
+    });
   });
-}])
-
-.controller('screen1', [function() {
-
-}]);
+  function controller($scope, $http) {
+    $http.get( ).then(
+      function success(res) {
+      
+    });
+  }    
+}());
