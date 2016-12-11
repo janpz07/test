@@ -1,5 +1,31 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="padding-top">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <div class="row">
+        <h3 class="panel-title">Personas</h3>
+        <table class="table table-striped table-hover table-condensed">
+          <thead>
+            <tr><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Fecha Nacimiento</th></tr>
+          </thead>
+          <tbody>
+            <tr class="text-left small" ng-repeat="personas in coche">
+              <td>{{personas.nombre}}</th><th>{{personas.apellidoPaterno}}</th><th>{{personas.apellidoMaterno}}</th>
+                <th>{{personas.nacimiento}}</th></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <h3 class="panel-title">Coches</h3>
+        <table class="table table-striped table-hover table-condensed">
+          <thead>
+            <tr><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Fecha Nacimiento</th></tr>
+          </thead>
+          <tbody>
+            <tr class="text-left small" ng-repeat="coches in coche">
+              <td>{{coches.marca}}</th><th>{{coches.tipo}}</th><th>{{coches.year}}</th><th>{{coches.color}}</th></tr>
+          </tbody>
+        </table>        
+      </div>
+    </div>
+  </div>
+</div>
